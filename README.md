@@ -5,4 +5,4 @@
 
 ## Introduction 
 Run [logGenerator.sh](logGenerator.sh) to generate massive logs and as superuser 
-` journalctl -f `.  
+in terminal run  ` journalctl -f `.
