@@ -1,6 +1,6 @@
 # Generació massiva de logs diversos 
 =====
-**Autor :** Sunil Shrestha**  
+**Autor :** Sunil Shrestha  
 **Curs :** Asix 
 
 ## Introduction 
