@@ -10,5 +10,5 @@
 	`# ./logGenerator.sh`  
 
 * ### Pas 3 
-> Verifique si els logs s'esten generant correctament.   
+> Verifiqueu si els logs s'esten generant correctament.   
 	`# journalctl -f`
