@@ -6,7 +6,7 @@
 
 * ### Pas 2 
 > Executeu el script.  
-	`# chmod +x loggenerator.sh`
+	`# chmod +x loggenerator.sh`  
 	`# ./logGenerator.sh`  
 
 * ### Pas 3 
