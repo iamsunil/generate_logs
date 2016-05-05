@@ -6,9 +6,9 @@
 
 * ### Pas 2 
 > Executeu el script.  
-	# chmod +x loggenerator.sh  
-	# ./logGenerator.sh  
+	`# chmod +x loggenerator.sh`
+	`# ./logGenerator.sh`  
 
 * ### Pas 3 
 > Verifiqueu si els logs s'esten generant correctament.   
-	# journalctl -f
+	`# journalctl -f`
