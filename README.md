@@ -11,7 +11,7 @@ Generar massivament diferents  tipus de logs amb un dels següents mètodes:
 [[tutorial]](tutorials/metode1.md)
 
 * **Mètode 2**    
-> Fer un servei propi que simplement utilitzi el script fet anteriorment al mètode 1.  
+> Fer un servei propi que utilitzi un simple script de bash que generi logs massivament .  
 [[tutorial]](tutorials/metode2.md)
 
 
