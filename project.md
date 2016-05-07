@@ -27,13 +27,15 @@ les dades viatgin xifrats mitjançant **SSL/TLS**.
 La estructura dels missatges generat pel syslog esten compost per tres parts :  
 `may 07 18:19:52 localhost.localdomain systemd[1]: Started Fingerprint Authentication Daemon.`  
 
-* Prioritat 
+* Prioritat
 * Capçalera  
 * Text  
 
 ##### Prioritat   
 
-| 0  | Mensajes del kernel                         |  
+| codi  | descripció                         |  
+|----|:-------------------------------------------:|  
+| 0  | Mensajes del kernel                         | 
 | 1  | Mensajes del nivel de usuario               |  
 | 2  | Sistema de correo                           |  
 | 3  | Demonios de sistema                         |  
