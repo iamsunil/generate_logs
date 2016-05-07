@@ -67,16 +67,16 @@ però se sol seguir una convenció perquè clients i servidors s'entenguen.
 
 *Codis de severitat* 
 
-| codi | descripció                            |   |   |   |  
-|---|:----------------------------------------:|---|---|---|  
-| 0 | Emergència: el sistema està inutilizable |   |   |   |  
-| 1 | Alerta: s'ha d'actuar immediatament      |   |   |   |  
-| 2 | Crític: condicions crítiques             |   |   |   |  
-| 3 | Error: condiciones de error              |   |   |   |  
-| 4 | Perill: condicions de perill             |   |   |   |  
-| 5 | Avís: normal, però condicions notables   |   |   |   |  
-| 6 | Informació: missatges informatius        |   |   |   |  
-| 7 | Depuració: missatges de baix nivell      |   |   |   |  
+| codi | descripció                            |  
+|---|:----------------------------------------:|  
+| 0 | Emergència: el sistema està inutilizable |  
+| 1 | Alerta: s'ha d'actuar immediatament      |  
+| 2 | Crític: condicions crítiques             |  
+| 3 | Error: condiciones de error              |  
+| 4 | Perill: condicions de perill             |  
+| 5 | Avís: normal, però condicions notables   |  
+| 6 | Informació: missatges informatius        |  
+| 7 | Depuració: missatges de baix nivell      |  
 
 *Càlcul de la prioritat*  
 Per a conèixer la prioritat final d'un missatge, s'aplica la següent fórmula:  
