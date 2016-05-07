@@ -88,6 +88,6 @@ El primer camp, temps, s'escriu en format Mmm dd hh:mm:ss, on Mmm són les inici
 
 El que queda de paquet syslog a l'omplir la prioritat i la capçalera és el mateix text del missatge. Aquest inclourà informació sobre el procés que ha generat l'avís, normalment al principi (en els primers 32 caràcters) i acabat per un caràcter no alfanumèric (com un espai, ":" o "["). Després, ve el contingut real del missatge, sense cap caràcter especial per a marcar el final.
 
-
+### 1.2 Journal  
 
 
