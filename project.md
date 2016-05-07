@@ -32,6 +32,7 @@ La estructura dels missatges generat pel syslog esten compost per tres parts :
 * Text  
 
 **Prioritat**  
+
 La prioritat és un nombre de 8 bits que indica tant el recurs (tipus d'aparell que ha generat el missatge) com la severitat  
 (importància del missatge), nombres de 5 i 3 bits respectivament. Els codis de recurs i severitat els decideix lliurement l'aplicació,  
 però se sol seguir una convenció perquè clients i servidors s'entenguen.  
@@ -83,6 +84,7 @@ Per a conèixer la prioritat final d'un missatge, s'aplica la següent fórmula:
 `Prioritat = Recurs * 8 + Severitat`  
  
 **Capçalera**  
+
 El segon camp d'un missatge syslog, la capçalera, indica tant el temps com el nom de l'ordinador que emet el missatge. Això s'escriu en codificació ASCII (7 bits), per tant és text llegible.  
 El primer camp, temps, s'escriu en format Mmm dd hh:mm:ss, on Mmm són les inicials del nom del mes en anglès, dd, és el dia del mes,i la resta és l'hora. No s'indica l'any.Just després ve el nom d'ordinador (hostname), o l'adreça IP si no es coneix el nom. No pot contenir espais, ja que aquest camp acaba quan es troba el següent espai.
 
