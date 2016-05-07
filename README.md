@@ -1,7 +1,7 @@
 # Generació massiva de logs diversos 
 =====
 **Autor:** Sunil Shrestha  	
-**Curs:** ASIX
+**Curs:** ASIX  
 **Centre:** Escola Del Treball
 ## Objectiu del Projecte
 Generar massivament diferents tipus de logs amb els següents mètodes: 
