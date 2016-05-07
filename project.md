@@ -20,7 +20,7 @@ Per realitzar aquesta tasca utilitzaré les següents eines:
 
 Syslog és un estàndard(protocol, servei) utilitzat per la generació, el processament i el transport de missatges  
 de registre del sistema, és a dir, els logs del sistema. Els missatges de syslog normalment s'envien via **UDP** en text pla pel  
-port 514. Pero, algunes implementacions del servidor, com **syslog-ng** permeten utilitzar **TCP**, i també ofereixen Stunnel perquè  
+port 514. Però, algunes implementacions del servidor, com **syslog-ng** permeten utilitzar **TCP**, i també ofereixen Stunnel perquè  
 les dades viatgin xifrats mitjançant **SSL/TLS**.  
 
 #### 1.1.1 Estructura del misstage   
@@ -86,8 +86,10 @@ Per a conèixer la prioritat final d'un missatge, s'aplica la següent fórmula:
 **Capçalera**  
 
 El segon camp d'un missatge syslog, la capçalera, indica tant el temps com el nom de l'ordinador que emet el missatge. Això s'escriu en codificació ASCII (7 bits), per tant és text llegible.  
-El primer camp, temps, s'escriu en format Mmm dd hh:mm:ss, on Mmm són les inicials del nom del mes en anglès, dd, és el dia del mes,i la resta és l'hora. No s'indica l'any.Just després ve el nom d'ordinador (hostname), o l'adreça IP si no es coneix el nom. No pot contenir espais, ja que aquest camp acaba quan es troba el següent espai.
+El primer camp, temps, s'escriu en format Mmm dd hh:mm:ss, on Mmm són les inicials del nom del mes en anglès, dd, és el dia del mes,i la resta és l'hora. No s'indica l'any.Just després ve el nom d'ordinador (hostname), o l'adreça IP si no es coneix el nom. No pot contenir espais, ja que aquest camp acaba quan es troba el següent espai.  
 
+**Text**  
+El que queda de paquet syslog a l'omplir la prioritat i la capçalera és el mateix text del missatge. Aquest inclourà informació sobre el procés que ha generat l'avís, normalment al principi (en els primers 32 caràcters) i acabat per un caràcter no alfanumèric (com un espai, ":" o "["). Després, ve el contingut real del missatge, sense cap caràcter especial per a marcar el final.
 
 
 
