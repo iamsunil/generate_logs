@@ -2,9 +2,8 @@
 
 ## Introducció 
 
-El meu projecte consisteix en **Generació massiva de logs diversos**, és a dir, generar grans volums de logs, de diferents tipus  
-utilitzant algunes eines del sistema o serveis. Aquest és un projecte al servei dels meus companys per facilitar-les la generació  
-massiva de logs en els seus projectes.  
+El meu projecte consisteix en **Generació massiva de logs diversos**, és a dir, generar grans volums de logs, de diferents tipus utilitzant algunes eines del sistema o serveis.  
+Aquest és un projecte al servei dels meus companys per facilitar-les la generació massiva de logs en els seus projectes.  
 
 Per realitzar aquesta tasca utilitzaré les següents eines:  
 
@@ -18,13 +17,11 @@ Per realitzar aquesta tasca utilitzaré les següents eines:
 
 ### 1.1 Syslog  
 
-Syslog és un estàndard(protocol, servei) utilitzat per la generació, el processament i el transport de missatges  
-de registre del sistema, és a dir, els logs del sistema. Els missatges de syslog normalment s'envien via **UDP** en text pla pel  
-port 514. Però, algunes implementacions del servidor, com **syslog-ng** permeten utilitzar **TCP**, i també ofereixen Stunnel perquè  
-les dades viatgin xifrats mitjançant **SSL/TLS**.  
+Syslog és un estàndard(protocol, servei) utilitzat per la generació, el processament i el transport de missatges de registre del sistema, és a dir, els logs del sistema.  
+Els missatges de syslog normalment s'envien via **UDP** en text pla pel port 514. Però, algunes implementacions del servidor, com **syslog-ng** permeten utilitzar **TCP**, i també ofereixen Stunnel perquè les dades viatgin xifrats mitjançant **SSL/TLS**.  
 
 #### 1.1.1 Estructura del misstage   
-La estructura dels missatges generat pel syslog esten compost per tres parts :  
+La estructura dels missatges generat pel syslog esten compost per tres parts. Per exemple :  
 `may 07 18:19:52 localhost.localdomain systemd[1]: Started Fingerprint Authentication Daemon.`  
 
 * Prioritat
@@ -33,9 +30,8 @@ La estructura dels missatges generat pel syslog esten compost per tres parts :
 
 **Prioritat**  
 
-La prioritat és un nombre de 8 bits que indica tant el recurs (tipus d'aparell que ha generat el missatge) com la severitat  
-(importància del missatge), nombres de 5 i 3 bits respectivament. Els codis de recurs i severitat els decideix lliurement l'aplicació,  
-però se sol seguir una convenció perquè clients i servidors s'entenguen.  
+La prioritat és un nombre de 8 bits que indica tant el recurs (tipus d'aparell que ha generat el missatge) com la severitat (importància del missatge), nombres de 5 i 3 bits respectivament.  
+Els codis de recurs i severitat els decideix lliurement l'aplicació, però se sol seguir una convenció perquè clients i servidors s'entenguen.  
 
 *Codis de recurs*  
 
