@@ -22,14 +22,14 @@ Generar massivament diferents tipus de logs amb els següents mètodes:
 
 * **Mètode 1**
 > Mitjançant un simple script de bash o python.   
-[*[tutorial]*](tutorials/metode1.md)
+[*[tutorial]*](metode1)
 
 * **Mètode 2**    
 > Fer un servei propi que generi logs massivament .  
-[*[tutorial]*](tutorials/metode2.md)  
+[*[tutorial]*](metode2)  
 
 * **Mètode 3**  
 > Utilitzant el Mysql Server.   
-[*[tutorial]*](tutorials/metode3.md)  
+[*[tutorial]*](metode3)  
 
 
