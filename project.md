@@ -81,12 +81,12 @@ Per a conèixer la prioritat final d'un missatge, s'aplica la següent fórmula:
  
 **Capçalera**  
 
-El segon camp d'un missatge syslog, la capçalera, indica tant el temps com el nom de l'ordinador que emet el missatge. Això s'escriu en codificació ASCII (7 bits), per tant és text llegible.  
-El primer camp, temps, s'escriu en format Mmm dd hh:mm:ss, on Mmm són les inicials del nom del mes en anglès, dd, és el dia del mes,i la resta és l'hora. No s'indica l'any.Just després ve el nom d'ordinador (hostname), o l'adreça IP si no es coneix el nom. No pot contenir espais, ja que aquest camp acaba quan es troba el següent espai.  
+El segon camp d'un missatge syslog, la capçalera, indica tant el temps com el nom de l'ordinador que emet el missatge. Això s'escriu en codificació ASCII (7 bits).  
+El primer camp, temps, s'escriu en format Mmm dd hh:mm:ss, on Mmm són les inicials del nom del mes en anglès, dd, és el dia del mes,i la resta és l'hora. No s'indica l'any. Just després ve el nom d'ordinador (hostname), o l'adreça IP si no es coneix el nom. No pot contenir espais, ja que aquest camp acaba quan es troba el següent espai.  
 
 **Text**  
 
-El que queda de paquet syslog a l'omplir la prioritat i la capçalera és el mateix text del missatge. Aquest inclourà informació sobre el procés que ha generat l'avís, normalment al principi (en els primers 32 caràcters) i acabat per un caràcter no alfanumèric (com un espai, ":" o "["). Després, ve el contingut real del missatge, sense cap caràcter especial per a marcar el final.
+Aquest inclourà informació sobre el procés que ha generat l'avís, normalment al principi (en els primers 32 caràcters) i acabat per un caràcter no alfanumèric (com un espai, ":" o "["). Després, ve el contingut real del missatge, sense cap caràcter especial.
 
 ### 1.2 Journal  
 
