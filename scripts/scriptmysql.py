@@ -24,3 +24,4 @@ for table in list_tables :
 		
 pipeData.stdin.write("\q\n")
 sys.exit(0)
+

@@ -3,6 +3,7 @@
 
 DELTA='0.1'
 
+
 FACILITIES=(
 	0	# kernel messages
 	1	# user-level messages
