@@ -1,26 +1,11 @@
-# Generació massiva de logs diversos 
+# 1. Conceptes bàsiques 
 
-## Introducció 
-
-El meu projecte consisteix en **Generació massiva de logs diversos**, és a dir, generar grans volums de logs, de diferents tipus utilitzant algunes eines del sistema o serveis.  
-Aquest és un projecte al servei dels meus companys per facilitar-les la generació massiva de logs en els seus projectes.  
-
-Per realitzar aquesta tasca utilitzaré les següents eines:  
-
-* Un equip amb GNU Linux (fedora 20)
-* Docker 
-* Mysql Server
-* Python  
-* Bash
-
-## 1. Conceptes bàsiques 
-
-### 1.1 Syslog  
+## 1.1 Syslog  
 
 Syslog és un estàndard(protocol, servei) utilitzat per la generació, el processament i el transport de missatges de registre del sistema, és a dir, els logs del sistema.  
 Els missatges de syslog normalment s'envien via **UDP** en text pla pel port 514. Però, algunes implementacions del servidor, com **syslog-ng** permeten utilitzar **TCP**, i també ofereixen Stunnel perquè les dades viatgin xifrats mitjançant **SSL/TLS**.  
 
-#### 1.1.1 Estructura del misstage   
+### 1.1.1 Estructura del misstage   
 La estructura dels missatges generat pel syslog esten compost per tres parts. Per exemple :  
 `may 07 18:19:52 localhost.localdomain systemd[1]: Started Fingerprint Authentication Daemon.`  
 
@@ -88,6 +73,6 @@ El primer camp, temps, s'escriu en format Mmm dd hh:mm:ss, on Mmm són les inici
 
 Aquest inclourà informació sobre el procés que ha generat l'avís, normalment al principi (en els primers 32 caràcters) i acabat per un caràcter no alfanumèric (com un espai, ":" o "["). Després, ve el contingut real del missatge, sense cap caràcter especial.
 
-### 1.2 Journal  
+## 1.2 Journal  
 
 
