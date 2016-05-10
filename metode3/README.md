@@ -42,7 +42,7 @@ Comprovar si ha generat un procés o no.
 		# ps ax  
 Deixem el container i mysql server funcionant.    
 ### Pas 5  
-Des de altre terminal, accedir al directori /path/to/generate_logs/metode3.  
+Des de altre terminal, accedir al directori `/path/to/generate_logs/metode3`.  
 
 		# cd /path/to/generate_logs/metode3  
 		
