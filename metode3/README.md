@@ -12,7 +12,7 @@ Abans de començar amb els següents passos, cloneu aquest [repositori](https://
 Accedir al directori del repositori generat per git clone.  
   
 		# cd generate_logs  
-I després accedim al directori apropiat. Aquest pas és important per què hi ha el Dockerfile que utilitzarem postriorment per crear el imatge.  
+I després accedim al directori 'metode3/docker_mysql`. Aquest pas és important per què el Dockerfile que utilitzarem postriorment per crear el imatge está dins d'aquest.  
 
 		# cd metode3/docker_mysql  
 
@@ -24,7 +24,7 @@ Verificar la creació del imatge.
 
 		# docker images
 ### Pas 3  
-Crear el container apartir del imatge generat previament i posar-ho a la marxa.  
+Crear el container apartir del imatge generat previament i posar-lo a la marxa.  
 
 		# docker run \
 			--name <container_name> \
@@ -47,9 +47,10 @@ Des de altre terminal, accedir al directori /path/to/generate_logs/metode3.
 		# cd /path/to/generate_logs/metode3  
 		
 Executar el script [mysql_logGen.py](mysql_logGen.py).  
-		# ./mysql_logGen.py  
+
+		# ./mysql_logGen.py   
 ### Pas 6  
-Tornar al container i verifacar la generació de logs.  
+Tornar al container i verificar la generació de logs.  
 
 		# tail -f /var/log/queries.log   
 
