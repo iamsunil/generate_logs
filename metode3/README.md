@@ -10,10 +10,29 @@ Abans de començar amb següents pasos, cloneu aquest [repositori](https://githu
 Accedir al directori del repositori generat per git clone.  
   
 		# cd generate_logs  
-I després accedim al directori apropiat.  
+I després accedim al directori apropiat. Aquest pas és important per què hi ha el Dockerfile que utilitzarem postriorment per crear el imatge.  
+
 		# cd metode3/docker_mysql  
 
 ### Pas 2  
-Crear l'imatge apartir del Dockerfile
-docker build --rm -t $IMAGE_TAG/mysql . 
+Crear l'imatge apartir del Dockerfile 
+
+		#docker build --rm -t <image_tag>/mysql --file=Dockerfile  
+Verificar la creació del imatge.  
+
+		# docker images
+### Pas 3  
+Crear el container i posar-lo a la marxa apartir del imatge generat previament.  
+
+		# docker run \
+			--name $CONT_NAME \
+			--publish=3306:3306 \
+			--tty=true \
+			--interactive=true \
+			$IMAGE_TAG/mysql \
+			/bin/bash  
+### Pas 4  
+
+
+
 Dins d'aquest directori verifiqueu l'existencia del script `logGenerator.sh`, ja que la ruta absoluta d'aquest utilitzarem posteriorment al pas 2.  
