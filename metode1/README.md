@@ -1,5 +1,5 @@
 # Generació massiva de logs diversos amb un script de bash  
-Aquest mètode consisteix en utilitzar un script de bash que generiï logs massivament fent servir simplement l'ordre `logger` del sistema amb unes opciones especifiques.  
+Aquest mètode consisteix en utilitzar un script de bash que generiï logs massivament fent servir simplement l'ordre `logger` del sistema amb unes opcions especifiques.  
 
 ## Instruccions  
 ### Pas 1  
