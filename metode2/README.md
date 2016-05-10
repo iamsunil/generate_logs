@@ -1,4 +1,5 @@
-# Crear un propi dimoni que faci la funció de generació massiva de logs   
+# Crear un servei utilitzant systemd  
+A continuació crearem un servei amb el mecanisme que ens facilita el systemd. Un dels avantatges d'utilitzar aquest mètode és que podem administrar el servi, és a dir, opcions de fer-li `start`, `stop`, `restart`,...  
 
 ## Instruccions 
 Abans de tot, heu de clonar el repositori per poder siguir amb els següents pasos. Si ja heu fet previament no cal.  
