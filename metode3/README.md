@@ -4,7 +4,7 @@ Per generar logs massivament utilitzarem un container de docker amb **Mysql Serv
 Per entendre millor el funcionament de script, la generació de logs i el fitxer de log llegiu aquesta [documentció](docker_mysql/README.md).  
 
 ## Instruccions 
-Abans de començar amb següents pasos, cloneu aquest [repositori](https://github.com/iamsunil/generate_logs.git). Si ja heu fet previament no cal.  
+Abans de començar amb els següents passos, cloneu aquest [repositori](https://github.com/iamsunil/generate_logs.git). Si ja heu fet previament no cal.  
     
 		# git clone https://github.com/iamsunil/generate_logs.git  
 
