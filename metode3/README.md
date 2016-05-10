@@ -25,11 +25,11 @@ Verificar la creació del imatge.
 Crear el container apartir del imatge generat previament i posar-ho a la marxa.  
 
 		# docker run \
-			--name $CONT_NAME \
+			--name <container_name> \
 			--publish=3306:3306 \
 			--tty=true \
 			--interactive=true \
-			$IMAGE_TAG/mysql \
+			<image_tag>/mysql \
 			/bin/bash  
 ### Pas 4  
 
