@@ -22,7 +22,7 @@ Verificar la creació del imatge.
 
 		# docker images
 ### Pas 3  
-Crear el container i posar-lo a la marxa apartir del imatge generat previament.  
+Crear el container apartir del imatge generat previament i posar-lo a la marxa.  
 
 		# docker run \
 			--name $CONT_NAME \
