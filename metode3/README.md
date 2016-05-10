@@ -17,7 +17,7 @@ I després accedim al directori apropiat. Aquest pas és important per què hi h
 ### Pas 2  
 Crear l'imatge apartir del Dockerfile 
 
-		#docker build --rm -t <image_tag>/mysql --file=Dockerfile  
+		# docker build --rm -t <image_tag>/mysql --file=Dockerfile  
 Verificar la creació del imatge.  
 
 		# docker images
