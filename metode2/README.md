@@ -1,8 +1,8 @@
 # Crear un servei utilitzant systemd  
-A continuació crearem un servei amb el mecanisme que ens facilita el systemd. Un dels avantatges d'utilitzar aquest mètode és que podem administrar el servi, és a dir, opcions de fer-li `start`, `stop`, `restart`,...  
+A continuació crearem un servei amb el mecanisme que ens facilita el systemd. Un dels avantatges d'utilitzar aquest mètode és que podem administrar el servei, és a dir, opcions de fer-li `start`, `stop`, `restart`,...  
 
 ## Instruccions 
-Abans de tot, heu de clonar el repositori per poder siguir amb els següents pasos. Si ja heu fet previament no cal.  
+Abans de començar amb següents pasos, suggereixo que cloneu aquest [repositori](https://github.com/iamsunil/generate_logs.git) per treballar còmodament. Si ja heu fet previament no cal.  
 
 		# git clone https://github.com/iamsunil/generate_logs.git
 ### Pas 1 
