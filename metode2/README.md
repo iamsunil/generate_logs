@@ -38,4 +38,4 @@ Un cop posat a marxa el servei, verifiqueu la generació del logs executant:
   
 		# journalctl -f  
 
-*Recordeu, que el dimoni ens proporciona les opciones de fer `start`, `stop`, `restrat`,...*
+*Recordeu, el dimoni ens proporciona les opciones de fer `start`, `stop`, `restrat`,...*
