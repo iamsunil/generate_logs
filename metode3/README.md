@@ -12,7 +12,7 @@ Abans de començar amb els següents passos, cloneu aquest [repositori](https://
 Accedir al directori del repositori generat per git clone.  
   
 		# cd generate_logs  
-I després accedim al directori 'metode3/docker_mysql`. Aquest pas és important per què el Dockerfile que utilitzarem postriorment per crear el imatge está dins d'aquest.  
+I després accedim al directori `metode3/docker_mysql`. Aquest pas és important per què el Dockerfile que utilitzarem postriorment per crear el imatge está dins d'aquest.  
 
 		# cd metode3/docker_mysql  
 
