@@ -51,5 +51,5 @@ Executar el script [mysql_logGen.py](mysql_logGen.py).
 ### Pas 6  
 Tornar al container i verifacar la generació de logs.  
 
-		# tail -f /var/log/queries.log  
+		# tail -f /var/log/queries.log   
 
