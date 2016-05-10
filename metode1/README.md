@@ -6,12 +6,12 @@ Aquest mètode consisteix en utilitzar un script de bash que generiï logs massi
 Descarregueu el script [logGenerator.sh](logGenerator.sh).  
 
 ### Pas 2 
-Executeu el script.  
+Executar el script.  
 
 		# chmod +x loggenerator.sh  
 		# ./logGenerator.sh  
 
 ### Pas 3 
-Verifiqueu si els logs s'esten generant correctament.  
+Verificar si els logs s'esten generant correctament.  
 
 		# journalctl -f
