@@ -6,16 +6,16 @@ Abans de començar amb següents pasos, suggereixo que cloneu aquest [repositori
 
 		# git clone https://github.com/iamsunil/generate_logs.git
 ### Pas 1 
-> Accedir al directori del repositori generat per git clone.  
+Accedir al directori del repositori generat per git clone.  
   
 		# cd generate_logs  
 		# cd scripts  
 	   
-> Dins d'aquest directori verifiqueu l'existencia del script `logGenerator.sh`, ja que la ruta absoluta d'aquest utilitzarem posteriorment al pas 2.  
+Dins d'aquest directori verifiqueu l'existencia del script `logGenerator.sh`, ja que la ruta absoluta d'aquest utilitzarem posteriorment al pas 2.  
 		
 ### Pas 2
 #### Creació del dimoni 
-> Crear al /etc/systemd/system/ un fitxer <deamon_name>.service. Atenció !, el valor del variable `ExecStart=` ha de ser la ruta absoluta del script `logGenerator.sh`.  
+Crear al /etc/systemd/system/ un fitxer <deamon_name>.service. Atenció !, el valor del variable `ExecStart=` ha de ser la ruta absoluta del script `logGenerator.sh`.  
   
 		# cat <<-END > /etc/systemcd/system/<daemon_name>.service  
 		[Unit]  
@@ -28,14 +28,14 @@ Abans de començar amb següents pasos, suggereixo que cloneu aquest [repositori
 		WantedBy=multi-user.target  
 	
 ### Pas 3 
-> Engegar el servei creat.  
+Engegar el servei creat.  
  
 		# systemctl daemon-reload  
 		# systemctl start <daemon_name>.service  
 		# systemctl status <daemon_name>.service  
 		
-> Un cop posat a marxa el servei, verifiqueu la generació del logs executant:  
+Un cop posat a marxa el servei, verifiqueu la generació del logs executant:  
   
 		# journalctl -f  
 
-> Recordeu, que el dimoni ens proporciona les opciones de fer `start`, `stop`, `restrat`,...
+*Recordeu, que el dimoni ens proporciona les opciones de fer `start`, `stop`, `restrat`,...*
