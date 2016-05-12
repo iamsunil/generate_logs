@@ -12,4 +12,7 @@ Aquest fitxer serveix per crear un imatge de docker. Dintre d'aquest és on indi
 * `ADD`
 * `COPY`
 * `RUN`
-* `CMD`
+* `CMD`  
+
+### my.cnf  
+Aquest és el fitxer de configuració del Mysql Server.
