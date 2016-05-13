@@ -10,7 +10,7 @@ do
 	
 	for tab in ${TABLES[@]}
 	do
-		mysql --host=192.168.2.50 --port=3306  -uroot -pjupiter insta -e "select * from $tab;"
+		mysql --host=192.168.1.129 --port=3306  -uroot -pjupiter insta -e "select * from $tab;"
 		sleep $DELTA
 	done
 
