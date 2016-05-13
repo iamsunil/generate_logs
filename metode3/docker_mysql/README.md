@@ -15,4 +15,16 @@ Aquest fitxer serveix per crear un imatge de docker. Dintre d'aquest és on indi
 * `CMD`  
 
 ### my.cnf  
-Aquest és el fitxer de configuració del Mysql Server.
+Aquest és el fitxer de configuració del Mysql Server.  
+
+
+| Log Type               |                         Information Written to Log                         |  
+|------------------------|:--------------------------------------------------------------------------:|  
+| Error log              | Problems encountered starting, running, or stopping             mysqld     |  
+| General query log      | Established client connections and statements received from clients        |  
+| Binary log             | Statements that change data (also used for replication)                    |  
+| Relay log              | Data changes received from a replication master server                     |  
+| Slow query log         | Queries that took more than             long_query_time seconds to execute |  
+| DDL log (metadata log) | Metadata operations performed by DDL statements                            |  
+
+### logs
