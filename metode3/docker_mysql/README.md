@@ -14,17 +14,24 @@ Aquest fitxer serveix per crear un imatge de docker. Dintre d'aquest és on indi
 * `RUN`
 * `CMD`  
 
-### my.cnf  
-Aquest és el fitxer de configuració del Mysql Server.  
+### [config_mysql.sh](config_mysql.sh)  
+És un simple script de bash per: 
+
+* Instalar **mariadb**
+* Assignar el password `jupiter` al usuari `root` del mysql server.  
+* Crear un base de dades `instagram` format per 5 taules amb 5000 registres en cada un d'elles.
+* Concedir tots els permisos al usuari `root`.  
+
+### [dump_insta.sql](dump_insta.sql)   
+Aquest és un script que crea 5 taules i inserta 5000 registres en cada un d'elles respectant la integritat referencial. El utilitzarem per fer un volcat al base de dades del container.  
+
+### [my.cnf](my.cnf)  
+Aquest és el fitxer de configuració del Mysql Server. He afegit una sèrie de paràmetres nous, en concret:  
+
+* `slow_query_log=on`: Activa els logs dels queries lents, per defecte esta desactivat.  
+* `long_query_time=0.005`: El valor es representa en segons. Qualsevol consulta que trigui més d'aquest valor en executar-se es valorarà com *"slow query"*.  
+* `slow_query_log_file='/var/log/mysql-slow-queries.log'`: El valor d'aquest paràmetre serà la ubicació del fitxer on volem guardar tots els queries lents.  
+
+Amb aquesta configuració,  tots els logs que generiï el meu script s'aniran a parar al fitxer indicat al `slow_query_log_file`.
 
 
-| Log Type               |                         Information Written to Log                         |  
-|------------------------|:--------------------------------------------------------------------------:|  
-| Error log              | Problems encountered starting, running, or stopping             mysqld     |  
-| General query log      | Established client connections and statements received from clients        |  
-| Binary log             | Statements that change data (also used for replication)                    |  
-| Relay log              | Data changes received from a replication master server                     |  
-| Slow query log         | Queries that took more than             long_query_time seconds to execute |  
-| DDL log (metadata log) | Metadata operations performed by DDL statements                            |  
-
-### logs
