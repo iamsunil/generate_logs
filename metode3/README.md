@@ -31,7 +31,7 @@ Crear el container apartir del imatge generat previament i posar-lo a la marxa.
 			--publish=3306:3306 \
 			--tty=true \
 			--interactive=true \
-			<image_tag>/mysql \
+			<image_tag>/mysql 
 			  
 ### Pas 4  
 Engegar el container.
