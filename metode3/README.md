@@ -24,7 +24,7 @@ Verificar la creació del imatge.
 
 		docker images
 ### Pas 3  
-Crear el container apartir del imatge generat previament i posar-lo a la marxa.  
+Crear el container apartir del imatge generat previament.  
 
 		docker create \
 			--name <container_name> \
