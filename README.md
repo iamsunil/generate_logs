@@ -21,15 +21,15 @@ Per realitzar aquesta tasca utilitzaré les següents eines:
 Generar massivament diferents tipus de logs amb els següents mètodes: 
 
 * **Mètode 1**
-> Mitjançant un simple script de bash o python.   
+Mitjançant un simple script de bash o python.   
 [*[tutorial]*](metode1)
 
 * **Mètode 2**    
-> Fer un servei propi que generi logs massivament .  
+Fer un servei propi que generi logs massivament .  
 [*[tutorial]*](metode2)  
 
 * **Mètode 3**  
-> Utilitzant el Mysql Server.   
+Utilitzant el Mysql Server.   
 [*[tutorial]*](metode3)  
 
 
