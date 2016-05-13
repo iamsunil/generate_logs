@@ -6,51 +6,50 @@ Per entendre millor el funcionament de script, la generació de logs i el fitxer
 ## Instruccions 
 Abans de començar amb els següents passos, cloneu aquest [repositori](https://github.com/iamsunil/generate_logs.git). Si ja heu fet previament no cal.  
     
-		# git clone https://github.com/iamsunil/generate_logs.git  
+		git clone https://github.com/iamsunil/generate_logs.git  
 
 ### Pas 1  
 Accedir al directori del repositori generat per git clone.  
   
-		# cd generate_logs  
+		cd generate_logs  
 I després accedim al directori `metode3/docker_mysql`. Aquest pas és important per què el Dockerfile que utilitzarem postriorment per crear el imatge está dins d'aquest.  
 
-		# cd metode3/docker_mysql  
+		cd metode3/docker_mysql  
 
 ### Pas 2  
 Crear l'imatge apartir del Dockerfile 
 
-		# docker build --rm -t <image_tag>/mysql .
+		docker build --rm -t <image_tag>/mysql .
 Verificar la creació del imatge.  
 
-		# docker images
+		docker images
 ### Pas 3  
 Crear el container apartir del imatge generat previament i posar-lo a la marxa.  
 
-		# docker run \
+		docker create \
 			--name <container_name> \
 			--publish=3306:3306 \
 			--tty=true \
 			--interactive=true \
 			<image_tag>/mysql \
-			/bin/bash  
+			  
 ### Pas 4  
-Engegar el Mysql Server. 
+Engegar el container.
 		
-		# /usr/bin/mysqld_safe &  
-Comprovar si ha generat un procés o no.
+		docker start <container_name>
 
-		# ps ax  
-Deixem el container i mysql server funcionant.    
 ### Pas 5  
 Des de altre terminal, accedir al directori `/path/to/generate_logs/metode3`.  
 
-		# cd /path/to/generate_logs/metode3  
+		cd /path/to/generate_logs/metode3  
 		
 Executar el script [mysql_logGen.py](mysql_logGen.py).  
 
-		# ./mysql_logGen.py   
+		./mysql_logGen.py   
 ### Pas 6  
-Tornar al container i verificar la generació de logs.  
+Connectar al container i verificar la generació de logs.  
 
-		# tail -f /var/log/queries.log   
+		docker exec -it <container_name> /bin/bash  
+		
+		tail -f /var/log/mysql-slow-queries.log   
 
