@@ -20,7 +20,7 @@ Per realitzar aquesta tasca utilitzaré les següents eines:
 ## Objectiu del Projecte
 Generar massivament diferents tipus de logs amb els següents mètodes: 
 
-* **Mètode 1**
+* **Mètode 1**  
 Mitjançant un simple script de bash o python.   
 [*[tutorial]*](metode1)
 
