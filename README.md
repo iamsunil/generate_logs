@@ -22,14 +22,14 @@ Generar massivament diferents tipus de logs amb els següents mètodes:
 
 * **Mètode 1**  
 Mitjançant un simple script de bash o python.   
-[*[tutorial]*](metode1)
+[*[tutorial]*](https://github.com/iamsunil/generate_logs/tree/master/metode1)
 
 * **Mètode 2**    
 Fer un servei propi que generi logs massivament .  
-[*[tutorial]*](metode2)  
+[*[tutorial]*](https://github.com/iamsunil/generate_logs/tree/master/metode2)  
 
 * **Mètode 3**  
 Utilitzant el Mysql Server.   
-[*[tutorial]*](metode3)  
+[*[tutorial]*](https://github.com/iamsunil/generate_logs/tree/master/metode3)  
 
 
