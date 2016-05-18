@@ -39,6 +39,12 @@ Engegar el container.
 		docker start <container_name>
 
 ### Pas 5  
+*Atenció!, aquest pas és important*  
+Redirigir els logs de MySQL al standard output del container
+
+		docker exec -it mysql12_cont /bin/bash -c "tail -f /r/log/mysql-slow-queries.log > /dev/console"  
+
+### Pas 5  
 Des de altre terminal, accedir al directori `/path/to/generate_logs/metode3`.  
 
 		cd /path/to/generate_logs/metode3  
@@ -46,10 +52,5 @@ Des de altre terminal, accedir al directori `/path/to/generate_logs/metode3`.
 Executar el script [mysql_logGen.py](mysql_logGen.py).  
 
 		./mysql_logGen.py   
-### Pas 6  
-Connectar al container i verificar la generació de logs.  
-
-		docker exec -it <container_name> /bin/bash  
-		
-		tail -f /var/log/mysql-slow-queries.log   
+ 
 
