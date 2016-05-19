@@ -39,18 +39,25 @@ Engegar el container.
 		docker start <container_name>
 
 ### Pas 5  
-*Atenció!, aquest pas és important*  
-Redirigir els logs de MySQL al standard output del container
+Redirigir els logs de MySQL al standard output del container.
+*Atenció!, aquest pas és important per que el log driver del container `jourald` només captura els logs del stdout del container i els envia al jourald del sistema*  
 
 		docker exec -it mysql12_cont /bin/bash -c "tail -f /r/log/mysql-slow-queries.log > /dev/console"  
 
-### Pas 5  
-Des de altre terminal, accedir al directori `/path/to/generate_logs/metode3`.  
+### Pas 6  
+Des de l'altre terminal, accedir al directori `/path/to/generate_logs/metode3`.  
 
 		cd /path/to/generate_logs/metode3  
 		
-Executar el script [mysql_logGen.py](mysql_logGen.py).  
+Executar el script [mysql_logGen.py](https://github.com/iamsunil/generate_logs/blob/master/metode3/mysql_logGenerator.py).  
 
-		./mysql_logGen.py   
+		./mysql_logGenerator.py   
  
+### Pas 7  
+Verificar si el journald del sistema està rebent els logs del container.  
 
+		# journalctl -fa  
+		
+*Atenció!, executar aquest ordre com a superusuari*
+
+ 
