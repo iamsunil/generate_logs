@@ -12,7 +12,7 @@ import sys,time
 from subprocess import Popen,  PIPE
 
 # Executa el pipe/subprocess
-command = "mysql --host=192.168.2.50 --port=3306  -uroot -pjupiter insta"
+command = "mysql --host=192.168.2.50 --port=3306  -uroot -pjupiter instagram"
 pipeData = Popen(command,shell=True,stdout=PIPE, stderr=PIPE,stdin=PIPE)
 list_tables = ["users","posts","likes","comments","followers"]
 

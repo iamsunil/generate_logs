@@ -2,14 +2,14 @@
 # Autor: Sunil Shrestha 
 # Curs: ASIX 
 # Centre: Escola Del Treball
-# Descripció: 
+# Descripció: Un script que crear un container amb les opcions especifiques apartir d'un imatge de docker.
 
 
 
 # Nom a posar al nou container
 CONT_NAME='mysql12_cont'
 
-# Crear un container apartir del imatge creat anteriorment 
+# Crear un container apartir d'un imatge del docker
 docker create \
 		--name $CONT_NAME \
 		--log-driver=journald \
