@@ -52,7 +52,7 @@ Engegar el container.
 		docker start <container_name>
 
 ### Pas 5  
-***Atenció!**, aquest pas és important per que el log driver del container `jourald` només captura els logs del stdout del container i els envia al jourald del sistema*  
+*Atenció!, aquest pas és important per que el log driver del container `jourald` només captura els logs del stdout del container i els envia al jourald del sistema*  
 Per tant, s'ha de redirigir els logs de MySQL server al standard output del container.   
 
 		docker exec -it mysql12_cont /bin/bash -c "tail -f /var/log/mysql-slow-queries.log > /dev/console"  
@@ -73,6 +73,6 @@ Verificar si el journald del sistema està rebent els logs del container.
 
 		# journalctl -fa  
 		
-***Atenció!**, executar aquest ordre com a superusuari*
+*Atenció!, executar aquest ordre com a superusuari*
 
  
