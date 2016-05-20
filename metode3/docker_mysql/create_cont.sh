@@ -16,5 +16,5 @@ docker create \
 		--publish=3306:3306 \
 		--tty=true \
 		--interactive=true \
-		cont12_mysql/mysql  \
+		projecte/mysql  \
 		

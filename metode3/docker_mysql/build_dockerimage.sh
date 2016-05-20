@@ -10,5 +10,5 @@
 IMAGE_TAG='projecte/mysql'
 
 # Crear l'imatge apartir del Dockerfile 
-docker build --rm -t $IMAGE_TAG/mysql . 
+docker build --rm -t $IMAGE_TAG . 
 

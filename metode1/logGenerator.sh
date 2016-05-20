@@ -1,9 +1,12 @@
 #!/bin/bash
-# 
+# Autor: Sunil Shrestha
+# Curs: ASIX
+# Descripció: Un script de bash que genera logs diversos utilitzant l'ordre `logger` 
 
-DELTA='0.1'
+# Segons que volem pausar
+DELTA='1'
 
-
+# Tipus de facilities 
 FACILITIES=(
 	0	# kernel messages
 	1	# user-level messages
@@ -31,6 +34,7 @@ FACILITIES=(
 	23	# local use 7  (local7)
 )
 
+# Tipus de levels 
 LEVELS=(
 	#0  # Emergency: system is unusable    
 	1  # Alert: action must be taken immediately
@@ -42,15 +46,18 @@ LEVELS=(
 	7  # Debug: debug-level messages 
 )
 
+# Per cada facilities generar logs de tots el levels infinitament
 while true
 do
-	
+
 	for fct in ${FACILITIES[@]}
 	do 
 		for lvl in ${LEVELS[@]} 
 		do 
 			random_message=$(pwgen 16 1)
 			logger --priority $fct.$lvl "$fct.$lvl: $random_message"
+			
+			# Fem pausa perquè la generació del logs no sigui massa ràpid
 			sleep $DELTA
 		done
 	done
