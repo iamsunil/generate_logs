@@ -7,7 +7,7 @@
 
 
 # Nom a posar al nou container
-CONT_NAME='mysql12_cont'
+CONT_NAME='mysql_GenLogs'
 
 # Crear un container apartir d'un imatge del docker
 docker create \

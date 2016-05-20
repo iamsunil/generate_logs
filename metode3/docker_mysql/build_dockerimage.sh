@@ -7,7 +7,7 @@
 
 
 # Nom a posar al nou imatge 
-IMAGE_TAG='cont12_mysql'
+IMAGE_TAG='projecte/mysql'
 
 # Crear l'imatge apartir del Dockerfile 
 docker build --rm -t $IMAGE_TAG/mysql . 
