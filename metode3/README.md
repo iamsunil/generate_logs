@@ -20,29 +20,42 @@ I després accedim al directori `metode3/docker_mysql`. Aquest pas és important
 Crear l'imatge apartir del Dockerfile 
 
 		docker build --rm -t <image_tag>/mysql .
+		
+Alternativa: 
+	
+		./build_dockerimage.sh  
+		
 Verificar la creació del imatge.  
 
-		docker images
+		docker images  
+***Nota***  
+El script crea el imatge del nom `projecte/mysql`.  
+ 
 ### Pas 3  
 Crear el container apartir del imatge generat previament.  
 
 		docker create \
 			--name <container_name> \
+			--log-driver=journald \
 			--publish=3306:3306 \
-			--tty=true \
-			--interactive=true \
-			<image_tag>/mysql 
-			  
+			<image_name>   
+Alternativa:  
+
+		./create_cont.sh
+
+***Nota***  
+El script crea el container del nom `mysql_GenLogs`.
+
 ### Pas 4  
 Engegar el container.
 		
 		docker start <container_name>
 
 ### Pas 5  
-Redirigir els logs de MySQL al standard output del container.
-*Atenció!, aquest pas és important per que el log driver del container `jourald` només captura els logs del stdout del container i els envia al jourald del sistema*  
+***Atenció!**, aquest pas és important per que el log driver del container `jourald` només captura els logs del stdout del container i els envia al jourald del sistema*  
+Per tant, s'ha de redirigir els logs de MySQL server al standard output del container.   
 
-		docker exec -it mysql12_cont /bin/bash -c "tail -f /r/log/mysql-slow-queries.log > /dev/console"  
+		docker exec -it mysql12_cont /bin/bash -c "tail -f /var/log/mysql-slow-queries.log > /dev/console"  
 
 ### Pas 6  
 Des de l'altre terminal, accedir al directori `/path/to/generate_logs/metode3`.  
@@ -52,12 +65,14 @@ Des de l'altre terminal, accedir al directori `/path/to/generate_logs/metode3`.
 Executar el script [mysql_logGen.py](https://github.com/iamsunil/generate_logs/blob/master/metode3/mysql_logGenerator.py).  
 
 		./mysql_logGenerator.py   
- 
+
+***Nota***  
+	El host on voleu executar aquest script ha de tenir el MySQL server instal·lat. 
 ### Pas 7  
 Verificar si el journald del sistema està rebent els logs del container.  
 
 		# journalctl -fa  
 		
-*Atenció!, executar aquest ordre com a superusuari*
+***Atenció!**, executar aquest ordre com a superusuari*
 
  
