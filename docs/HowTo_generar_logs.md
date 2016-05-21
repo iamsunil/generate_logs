@@ -111,7 +111,7 @@ dissenyat per proveir un millor entorn de treball per a expressar les dependènc
 servei, permet fer més feina paral·lelament a l'inici del sistema i reduir la sobrecàrrega de la shell.
 
 Aquest té el seu propi sistema de *logging* anomenada  **Journal**. Per tant, l'execució d'un dimoni **syslog** ja no és necessària. 
-Per defecte, el systemd emmagatzema els logs a ***/var/log/journal/*** i per consultar-los utilitzarem l'eïna `journalctl`. 
+Per defecte, el systemd emmagatzema els logs a ***/var/log/journal/*** i per consultar-los utilitzarem l'ordre `journalctl`. 
 
 
 ### Journald
@@ -285,7 +285,7 @@ Engegar el container.
 *Atenció!, aquest pas és important per que el log driver del container `jourald` només captura els logs del stdout del container i els envia al jourald del sistema*  
 Per tant, s'ha de redirigir els logs de MySQL server al standard output del container.   
 
-		docker exec -it <container_name> /bin/bash -c "tail -f /var/log/mysql-slow-queries.log > /dev/console" &  
+		docker exec -it <container_name> /bin/bash -c "tail -f /var/log/mysqlGeneral.log > /dev/console" &  
 
 ##### Pas 6  
 Des de l'altre terminal, accedir al directori `/path/to/generate_logs/metode3`.  
