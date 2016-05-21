@@ -298,7 +298,7 @@ Executar el script [mysql_logGen.py](https://github.com/iamsunil/generate_logs/b
 
 ***`Nota`***  
 	El host on executeu aquest script ha de tenir el MySQL server instal·lat. 
-### Pas 7  
+##### Pas 7  
 Verificar si el journald del sistema està rebent els logs del container.  
 
 		# journalctl -fa  
