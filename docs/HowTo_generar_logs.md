@@ -98,7 +98,7 @@ No pot contenir espais, ja que aquest camp acaba quan es troba el següent espai
 **Text**  
 
 Aquest inclourà informació sobre el procés que ha generat l'avís, normalment al principi
- (en els primers 32 caràcters) i acabat per un caràcter no alfanumèric (com un espai, ":" o "["). Després, 
+ (en els primers 32 caràcters) i acabat per un caràcter no alfanumèric (com un espai, ":" o "[" ). Després, 
  ve el contingut real del missatge, sense cap caràcter especial.
 
 ### Systemd
@@ -114,7 +114,7 @@ Aquest té el seu propi sistema de *logging* anomenada  **Journal**. Per tant, l
 Per defecte, el systemd emmagatzema els logs a ***/var/log/journal/*** i per consultar-los utilitzarem l'eïna `journalctl`. 
 
 
-###  Journald
+### Journald
  
 Journald és un servei del sistema per recollir i emmagatzemar dades de logs,
 introduïdes amb systemd. Això, fa que sigui més fàcil per als administradors de 
@@ -247,7 +247,7 @@ I després accedim al directori `metode3/docker_mysql`. Aquest pas és important
 Crear l'imatge apartir del Dockerfile 
 
 		docker build --rm -t <image_tag>/mysql .
-		
+
 Alternativa: 
 
 		./build_dockerimage.sh  
@@ -255,7 +255,8 @@ Alternativa:
 Verificar la creació del imatge.  
 
 		docker images  
-***Nota***  
+
+***`Nota`***  
 El script crea el imatge del nom `projecte/mysql`.  
  
 ##### Pas 3  
@@ -272,7 +273,7 @@ Alternativa:
 
 		./create_cont.sh
 
-***Nota***  
+***`Nota`***  
 El script crea el container del nom `mysql_GenLogs`.
 
 ##### Pas 4  
@@ -295,7 +296,7 @@ Executar el script [mysql_logGen.py](https://github.com/iamsunil/generate_logs/b
 
 		./mysql_logGenerator.py   
 
-***Nota***  
+***`Nota`***  
 	El host on executeu aquest script ha de tenir el MySQL server instal·lat. 
 ### Pas 7  
 Verificar si el journald del sistema està rebent els logs del container.  
