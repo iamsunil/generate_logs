@@ -24,7 +24,7 @@ Per realitzar aquesta tasca utilitzaré les següents eïnes:
 ### Syslog  
 
 Syslog és un estàndard utilitzat per la generació, el processament 
-i el transport dels logs del sistema.Els missatges de syslog normalment s'envien via **UDP** en text pla pel port 514. 
+i el transport dels logs del sistema. Els missatges de syslog normalment s'envien via **UDP** en text pla pel port 514. 
 Però, algunes implementacions del servidor, com **syslog-ng** permeten utilitzar **TCP**, 
 i també ofereixen Stunnel perquè les dades viatgin xifrats mitjançant **SSL/TLS**.  
 
