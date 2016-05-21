@@ -2,7 +2,7 @@
 A continuació, crearem un servei amb el mecanisme que ens facilita el systemd. Un dels avantatges d'utilitzar aquest mètode és que podem administrar el servei, és a dir, opcions de fer-li `start`, `stop`, `restart`,...  
 
 ## Instruccions 
-Abans de començar amb següents pasos, cloneu aquest [repositori](https://github.com/iamsunil/generate_logs.git). Si ja heu fet previament no cal.  
+Abans de començar amb següents passos, cloneu aquest [repositori](https://github.com/iamsunil/generate_logs.git). Si ja heu fet prèviament no cal.  
 
 		# git clone https://github.com/iamsunil/generate_logs.git
 ### Pas 1 
@@ -11,7 +11,7 @@ Accedir al directori del repositori generat per git clone.
 		# cd generate_logs  
 		# cd scripts  
 	   
-Dins d'aquest directori verifiqueu l'existencia del script `logGenerator.sh`, ja que la ruta absoluta d'aquest utilitzarem posteriorment al pas 2.  
+Dins d'aquest directori verifiqueu l'existència del script `logGenerator.sh`, ja que la ruta absoluta d'aquest utilitzarem posteriorment al pas 2.  
 		
 ### Pas 2
 #### Creació del dimoni 
@@ -38,4 +38,4 @@ Un cop posat a marxa el servei, verifiqueu la generació del logs executant:
   
 		# journalctl -f  
 
-*Recordeu, el dimoni ens proporciona les opciones de fer `start`, `stop`, `restrat`,...*
+*Recordeu, el dimoni ens proporciona les opcions de fer `start`, `stop`, `restrat`,...*

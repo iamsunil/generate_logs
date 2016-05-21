@@ -8,9 +8,9 @@
 
 El meu projecte consisteix en **Generació massiva de logs diversos**, és a dir, 
 generar grans volums de logs, de diferents tipus utilitzant algunes eines del sistema o serveis.  
-Aquest és un projecte al servei dels meus companys per facilitar-les la generació massiva de logs en els seus projectes.  
+Aquest és un projecte al servei dels meus companys per facilitar-les la generació massiva de logs en els seus projectes  
 
-Per realitzar aquesta tasca utilitzaré les següents eïnes:  
+Per realitzar aquesta tasca utilitzaré les següents eines:  
 
 * Un equip amb GNU Linux (fedora 20)
 * Docker 
@@ -28,8 +28,8 @@ i el transport dels logs del sistema. Els missatges de syslog normalment s'envie
 Però, algunes implementacions del servidor, com **syslog-ng** permeten utilitzar **TCP**, 
 i també ofereixen Stunnel perquè les dades viatgin xifrats mitjançant **SSL/TLS**.  
 
-#### Estructura del misstage   
-La estructura dels missatges generat pel syslog esten compost per tres parts.  
+#### Estructura del missatge   
+La estructura dels missatges generat pel syslog estén compost per tres parts.  
 
 * Prioritat
 * Capçalera  
@@ -103,8 +103,8 @@ Aquest inclourà informació sobre el procés que ha generat l'avís, normalment
 
 ### Systemd
 
-Systemd és un conjunt de dimonis d'administració dels sistemes, llibreries i eïnes 
-per interactuar amb el nucli del sistema operativo **GNU/Linux**. Aquest va ser desenvolupat per 
+Systemd és un conjunt de dimonis d'administració dels sistemes, llibreries i eines 
+per interactuar amb el nucli del sistema operatives **GNU/Linux**. Aquest va ser desenvolupat per 
 substituir l'antic sistema d'arrencada d'inici (init). És el procés que s'executa en l'espai d'usuari, 
 per tant, és el procés pare de tots els processos fills de l'espai usuari. Systemd està 
 dissenyat per proveir un millor entorn de treball per a expressar les dependències del 
@@ -133,13 +133,13 @@ Són registres d'activitats d'un sistema, que generalment responen a les següen
 
 ## Generació de logs diversos massivament
 
-Per generar els logs diversos massivament utilizaré els següents mètodes:
+Per generar els logs diversos massivament utilitzaré els següents mètodes:
 
 * Mètode 1: Bash script 
 * Mètode 2: Systemd service
 * Mètode 3: Docker  
 
-### Requirements 
+### Requeriments 
 
 * Un equip amb GNU Linux (fedora 20)
 * Docker 
@@ -174,7 +174,7 @@ Executar el script.
 		./logGenerator.sh  
 
 ##### Pas 3 
-Verificar com a `superusuari` si els logs s'esten generant correctament.  
+Verificar com a `superusuari` si els logs s'estén generant correctament.  
 
 		journalctl -f
 
@@ -191,7 +191,7 @@ Accedir al directori /path/to/generate_logs/metode1.
   
 		cd /path/to/generate_logs/metode1 
 	   
-Dins d'aquest directori verifiqueu l'existencia del script `logGenerator.sh`, ja que la ruta absoluta d'aquest utilitzarem posteriorment al pas 2.  
+Dins d'aquest directori verifiqueu l'existència del script `logGenerator.sh`, ja que la ruta absoluta d'aquest utilitzarem posteriorment al pas 2.  
 
 ##### Pas 2
 ###### Creació del dimoni 
@@ -209,7 +209,7 @@ Crear al /etc/systemd/system/ un fitxer <deamon_name>.service. Atenció !, el va
 		END  
 
 ***`Nota`***  
-El Script `logGenerator.sh` ha de tenir els permissos apropiats. Aquest ha de ser accescible pel `systemd`.
+El Script `logGenerator.sh` ha de tenir els permisos apropiats. Aquest ha de ser accessible pel `systemd`.
  
 ##### Pas 3 
 Engegar el servei creat.  
@@ -222,7 +222,7 @@ Un cop posat a marxa el servei, verifiqueu la generació del logs executant:
   
 		# journalctl -f  
 
-*Recordeu, el dimoni ens proporciona les opciones de fer `start`, `stop`, `restrat`,...*
+*Recordeu, el dimoni ens proporciona les opcions de fer `start`, `stop`, `restrat`,...*
 
 
 ### Mètode 3
@@ -239,12 +239,12 @@ i les configuracions del Mysql Server llegiu aquesta [documentació](https://git
 Accedir al directori del repositori generat per git clone.  
   
 		cd generate_logs  
-I després accedim al directori `metode3/docker_mysql`. Aquest pas és important per què el Dockerfile que utilitzarem postriorment per crear el imatge está dins d'aquest.  
+I després accedim al directori `metode3/docker_mysql`. Aquest pas és important per què el Dockerfile que utilitzarem posteriorment per crear la imatge està dins d'aquest.  
 
 		cd metode3/docker_mysql  
 
 ##### Pas 2  
-Crear l'imatge apartir del Dockerfile 
+Crear la imatge apartir del Dockerfile 
 
 		docker build --rm -t <image_tag>/mysql .
 
@@ -252,15 +252,15 @@ Alternativa:
 
 		./build_dockerimage.sh  
 
-Verificar la creació del imatge.  
+Verificar la creació de la imatge.  
 
 		docker images  
 
 ***`Nota`***  
-El script crea el imatge del nom `projecte/mysql`.  
+El script crea la imatge del nom `projecte/mysql`.  
  
 ##### Pas 3  
-Crear el container apartir del imatge generat previament.  
+Crear el container apartir de la imatge generat prèviament  
 
 		docker create \
 			--name <container_name> \
@@ -283,7 +283,7 @@ Engegar el container.
 
 ##### Pas 5  
 *Atenció!, aquest pas és important per que el log driver del container `jourald` només captura els logs del stdout del container i els envia al jourald del sistema*  
-Per tant, s'ha de redirigir els logs de MySQL server al standard output del container.   
+Per tant, s'ha de redirigir els logs de MySQL server al estàndard output del container.   
 
 		docker exec -it <container_name> /bin/bash -c "tail -f /var/log/mysqlGeneral.log > /dev/console" &  
 

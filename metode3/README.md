@@ -4,7 +4,7 @@ Per generar logs massivament utilitzarem un container de docker amb **Mysql Serv
 Per entendre millor el funcionament de script, la generació de logs i el fitxer de log llegiu aquesta [documentció](https://github.com/iamsunil/generate_logs/blob/master/metode3/docker_mysql/README.md).  
 
 ## Instruccions 
-Abans de començar amb els següents passos, cloneu aquest [repositori](https://github.com/iamsunil/generate_logs.git). Si ja heu fet previament no cal.  
+Abans de començar amb els següents passos, cloneu aquest [repositori](https://github.com/iamsunil/generate_logs.git). Si ja heu fet prèviament no cal.  
     
 		git clone https://github.com/iamsunil/generate_logs.git  
 
@@ -12,12 +12,12 @@ Abans de començar amb els següents passos, cloneu aquest [repositori](https://
 Accedir al directori del repositori generat per git clone.  
   
 		cd generate_logs  
-I després accedim al directori `metode3/docker_mysql`. Aquest pas és important per què el Dockerfile que utilitzarem postriorment per crear el imatge está dins d'aquest.  
+I després accedim al directori `metode3/docker_mysql`. Aquest pas és important per què el Dockerfile que utilitzarem posteriorment per crear la imatge està dins d'aquest.  
 
 		cd metode3/docker_mysql  
 
 ### Pas 2  
-Crear l'imatge apartir del Dockerfile 
+Crear la imatge apartir del Dockerfile 
 
 		docker build --rm -t <image_tag>/mysql .
 		
@@ -25,14 +25,14 @@ Alternativa:
 	
 		./build_dockerimage.sh  
 		
-Verificar la creació del imatge.  
+Verificar la creació de la imatge.  
 
 		docker images  
 ***`Nota`***  
-El script crea el imatge del nom `projecte/mysql`.  
+El script crea la imatge del nom `projecte/mysql`.  
  
 ### Pas 3  
-Crear el container apartir del imatge generat previament.  
+Crear el container apartir de la imatge generat prèviament  
 
 		docker create \
 			--name <container_name> \
@@ -55,7 +55,7 @@ Engegar el container.
 
 ### Pas 5  
 *Atenció!, aquest pas és important per que el log driver del container `jourald` només captura els logs del stdout del container i els envia al jourald del sistema*  
-Per tant, s'ha de redirigir els logs de MySQL server al standard output del container.   
+Per tant, s'ha de redirigir els logs de MySQL server al estàndard output del container.   
 
 		docker exec -it <container_name> /bin/bash -c "tail -f /var/log/mysqlGeneral.log > /dev/console" &  
 

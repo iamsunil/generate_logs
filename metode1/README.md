@@ -12,6 +12,6 @@ Executar el script.
 		# ./logGenerator.sh  
 
 ### Pas 3 
-Verificar si els logs s'esten generant correctament.  
+Verificar si els logs s'estén generant correctament.  
 
 		# journalctl -f

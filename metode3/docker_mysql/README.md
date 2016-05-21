@@ -4,7 +4,7 @@
 ## Descripció dels fitxers 
 
 ### [Dockerfile](Dockerfile)  
-Aquest fitxer serveix per crear un imatge de docker. Dintre d'aquest és on indicarem com volem el imatge, és a dir, els serveis i eines a instal·lar, les configuracions a fer,... Per entendre millor aquest fitxer al menys s'ha de tenir clar la funció d'aquestes instrucions:
+Aquest fitxer serveix per crear una imatge de docker. Dintre d'aquest és on indicarem com volem la imatge, és a dir, els serveis i eines a instal·lar, les configuracions a fer,... Per entendre millor aquest fitxer al menys s'ha de tenir clar la funció d'aquestes instruccions:
 *Built on : Docker version 1.8.3 Run on: Docker version 1.8.3 Tested on : Docker version 1.8.3*
 
 * `FROM`
@@ -32,5 +32,5 @@ Aquest és el fitxer de configuració del Mysql Server. He afegit una sèrie de 
 * `general_log=1`: Activa els logs general que per defecte esta desactivat.  
 * `general_log_file=/var/log/mysqlGeneral.log`: El valor d'aquest paràmetre serà la ubicació del fitxer on volem guardar tots els logs general.  
 
-Amb aquesta configuració,  tots els logs que generiï el meu script s'aniran a parar al fitxer indicat al paràmetre `general_log_file`.
+Amb aquesta configuració,  tots els logs que generi el meu script s'aniran a parar al fitxer indicat al paràmetre `general_log_file`.
 
