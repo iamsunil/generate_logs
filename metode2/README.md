@@ -17,7 +17,7 @@ Dins d'aquest directori verifiqueu l'existencia del script `logGenerator.sh`, ja
 #### Creació del dimoni 
 Crear al /etc/systemd/system/ un fitxer <deamon_name>.service. Atenció !, el valor del variable `ExecStart=` ha de ser la ruta absoluta del script `logGenerator.sh`.  
   
-		# cat <<-END > /etc/systemcd/system/<daemon_name>.service  
+		# cat <<-END > /etc/systemd/system/<daemon_name>.service  
 		[Unit]  
 		Description=Massive log generator   
 		[Service]  
@@ -26,7 +26,7 @@ Crear al /etc/systemd/system/ un fitxer <deamon_name>.service. Atenció !, el va
 		ExecStart=/path/to/logGenerator.sh  
 		[Install]  
 		WantedBy=multi-user.target  
-	
+		END
 ### Pas 3 
 Engegar el servei creat.  
  

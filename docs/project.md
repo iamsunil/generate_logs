@@ -1,11 +1,34 @@
-# 1. Conceptes bàsiques 
+# Generació massiva de logs diversos  
+**Autor:** Sunil Shrestha  	
+**Curs:** ASIX  
+**Centre:** Escola Del Treball  
+**Títol del projecte:** Generació massiva de logs diversos
 
-## 1.1 Syslog  
+## Introducció 
 
-Syslog és un estàndard(protocol, servei) utilitzat per la generació, el processament i el transport de missatges de registre del sistema, és a dir, els logs del sistema.  
-Els missatges de syslog normalment s'envien via **UDP** en text pla pel port 514. Però, algunes implementacions del servidor, com **syslog-ng** permeten utilitzar **TCP**, i també ofereixen Stunnel perquè les dades viatgin xifrats mitjançant **SSL/TLS**.  
+El meu projecte consisteix en **Generació massiva de logs diversos**, és a dir, 
+generar grans volums de logs, de diferents tipus utilitzant algunes eines del sistema o serveis.  
+Aquest és un projecte al servei dels meus companys per facilitar-les la generació massiva de logs en els seus projectes.  
 
-### 1.1.1 Estructura del misstage   
+Per realitzar aquesta tasca utilitzaré les següents eïnes:  
+
+* Un equip amb GNU Linux (fedora 20)
+* Docker 
+* MySQL Server
+* Python  
+* Bash 
+
+
+## Conceptes bàsiques 
+
+### Syslog  
+
+Syslog és un estàndard utilitzat per la generació, el processament 
+i el transport dels logs del sistema.Els missatges de syslog normalment s'envien via **UDP** en text pla pel port 514. 
+Però, algunes implementacions del servidor, com **syslog-ng** permeten utilitzar **TCP**, 
+i també ofereixen Stunnel perquè les dades viatgin xifrats mitjançant **SSL/TLS**.  
+
+#### Estructura del misstage   
 La estructura dels missatges generat pel syslog esten compost per tres parts. Per exemple :  
 `may 07 18:19:52 localhost.localdomain systemd[1]: Started Fingerprint Authentication Daemon.`  
 
@@ -66,13 +89,138 @@ Per a conèixer la prioritat final d'un missatge, s'aplica la següent fórmula:
  
 **Capçalera**  
 
-El segon camp d'un missatge syslog, la capçalera, indica tant el temps com el nom de l'ordinador que emet el missatge. Això s'escriu en codificació ASCII (7 bits).  
-El primer camp, temps, s'escriu en format Mmm dd hh:mm:ss, on Mmm són les inicials del nom del mes en anglès, dd, és el dia del mes,i la resta és l'hora. No s'indica l'any. Just després ve el nom d'ordinador (hostname), o l'adreça IP si no es coneix el nom. No pot contenir espais, ja que aquest camp acaba quan es troba el següent espai.  
+El segon camp d'un missatge syslog, la capçalera, indica tant el temps com el nom de 
+l'ordinador que emet el missatge. Això s'escriu en codificació ASCII (7 bits).  
+El primer camp, temps, s'escriu en format Mmm dd hh:mm:ss, on Mmm són les inicials 
+del nom del mes en anglès, dd, és el dia del mes,i la resta és l'hora. No s'indica l'any. 
+Just després ve el nom d'ordinador (hostname), o l'adreça IP si no es coneix el nom. 
+No pot contenir espais, ja que aquest camp acaba quan es troba el següent espai.  
 
 **Text**  
 
-Aquest inclourà informació sobre el procés que ha generat l'avís, normalment al principi (en els primers 32 caràcters) i acabat per un caràcter no alfanumèric (com un espai, ":" o "["). Després, ve el contingut real del missatge, sense cap caràcter especial.
+Aquest inclourà informació sobre el procés que ha generat l'avís, normalment al principi
+ (en els primers 32 caràcters) i acabat per un caràcter no alfanumèric (com un espai, ":" o "["). Després, 
+ ve el contingut real del missatge, sense cap caràcter especial.
 
-## 1.2 Journal  
+### Systemd
+
+Systemd és un conjunt de dimonis d'administració dels sistemes, llibreries i eïnes 
+per interactuar amb el nucli del sistema operativo **GNU/Linux**. Aquest va ser desenvolupat per 
+substituir l'antic sistema d'arrencada d'inici (init). És el procés que s'executa en l'espai d'usuari, 
+per tant, és el procés pare de tots els processos fills de l'espai usuari. Systemd està 
+dissenyat per proveir un millor entorn de treball per a expressar les dependències del 
+servei, permet fer més feina paral·lelament a l'inici del sistema i reduir la sobrecàrrega de la shell.
+
+Aquest té el seu propi sistema de *logging* anomenada  **Journal**. Per tant, l'execució d'un dimoni **syslog** ja no és necessària. 
+Per defecte, el systemd emmagatzema els logs a ***/var/log/journal/*** i per consultar-los utilitzarem l'eïna `journalctl`. 
 
 
+###  Journald
+ 
+Journald és un servei del sistema per recollir i emmagatzemar dades de logs,
+introduïdes amb systemd. Això, fa que sigui més fàcil per als administradors de 
+sistemes per trobar informació interessant i rellevant entre una quantitat enorme de logs.  
+ 
+
+### Logs 
+
+Són registres d'activitats d'un sistema, que generalment responen a les següents 5 W.
+
+1. Who
+2. What
+3. When
+4. Where
+5. Why  
+
+## Generació de logs diversos massivament
+
+Per generar els logs diversos massivament utilizaré els següents mètodes:
+
+* Mètode 1: Bash script 
+* Mètode 2: Systemd service
+* Mètode 3: Docker  
+
+### Requirements 
+
+* Un equip amb GNU Linux (fedora 20)
+* Docker 
+* MySQL Server
+* Python  
+* Bash 
+
+### Preparació del entorn de treball 
+
+És molt important tenir un entorn de treball adequat per treballar fàcilment i còmodament. Per tant, cloneu aquest [repositori](https://github.com/iamsunil/generate_logs.git).
+
+		# git clone https://github.com/iamsunil/generate_logs.git
+
+### Mètode 1 
+
+Aquest mètode consisteix en generar logs massivament apartir d'un script de bash que simplement utilitza l'ordre `logger` del sistema amb unes opcions especifiques.  
+
+#### Instruccions  
+##### Pas 1  
+Accedir al directori del repositori generat per git clone.  
+  
+		cd generate_logs  
+
+I després al directori metode1, on està el script per generar logs 
+
+		cd metode1 
+
+##### Pas 2 
+Executar el script.  
+
+		 chmod +x loggenerator.sh  
+		./logGenerator.sh  
+
+##### Pas 3 
+Verificar com a `superusuari` si els logs s'esten generant correctament.  
+
+		journalctl -f
+
+### Mètode 2 
+
+Aquest mètode consisteix en crear un servei amb el mecanisme que ens facilita el systemd.
+El servei simplement utilitzarà el script del mètode 1, és a dir, en arrencar aquest servei, 
+s'executarà aquell script i començarà a generar logs massivament fins que li aturem. Un dels avantatges d'utilitzar aquest
+mètode és que podem administrar el servei, és a dir,  fer-li `start`, `stop`, `restart`,...  
+
+#### Instruccions 
+##### Pas 1 
+Accedir al directori /path/to/generate_logs/metode1.  
+  
+		cd /path/to/generate_logs/metode1 
+	   
+Dins d'aquest directori verifiqueu l'existencia del script `logGenerator.sh`, ja que la ruta absoluta d'aquest utilitzarem posteriorment al pas 2.  
+
+##### Pas 2
+###### Creació del dimoni 
+Crear al /etc/systemd/system/ un fitxer <deamon_name>.service. Atenció !, el valor del variable `ExecStart=` ha de ser la ruta absoluta del script `logGenerator.sh`.  
+  
+		# cat <<-END > /etc/systemd/system/<daemon_name>.service  
+		[Unit]  
+		Description=Massive log generator   
+		[Service]  
+		Type=simple  
+		PIDFile=/var/run/generatelog.pid  
+		ExecStart=/path/to/logGenerator.sh  
+		[Install]  
+		WantedBy=multi-user.target  
+		END  
+
+***`Nota`***  
+El Script `logGenerator.sh` ha de tenir els permisosa apropiat. Aquest ha de ser accescible pel `systemd`
+ 
+##### Pas 3 
+Engegar el servei creat.  
+ 
+		# systemctl daemon-reload  
+		# systemctl start <daemon_name>.service  
+		# systemctl status <daemon_name>.service  
+
+Un cop posat a marxa el servei, verifiqueu la generació del logs executant:  
+  
+		# journalctl -f  
+
+*Recordeu, el dimoni ens proporciona les opciones de fer `start`, `stop`, `restrat`,...*

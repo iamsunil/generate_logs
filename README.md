@@ -1,19 +1,20 @@
 # Generació massiva de logs diversos 
-=====
+
 **Autor:** Sunil Shrestha  	
 **Curs:** ASIX  
 **Centre:** Escola Del Treball  
-
+**Títol del projecte:** Generació massiva de logs diversos
 ## Introducció 
 
-El meu projecte consisteix en **Generació massiva de logs diversos**, és a dir, generar grans volums de logs, de diferents tipus utilitzant algunes eines del sistema o serveis.  
+El meu projecte consisteix en **Generació massiva de logs diversos**, és a dir, 
+generar grans volums de logs, de diferents tipus utilitzant algunes eines del sistema o serveis.  
 Aquest és un projecte al servei dels meus companys per facilitar-les la generació massiva de logs en els seus projectes.  
 
 Per realitzar aquesta tasca utilitzaré les següents eines:  
 
 * Un equip amb GNU Linux (fedora 20)
 * Docker 
-* Mysql Server
+* MySQL Server
 * Python  
 * Bash 
 
