@@ -11,8 +11,11 @@
 import sys,time 
 from subprocess import Popen,  PIPE
 
+# ip del host on volem connectar
+HOST="192.168.2.50"
+
 # Executa el pipe/subprocess
-command = "mysql --host=192.168.2.50 --port=3306  -uroot -pjupiter instagram"
+command = "mysql --host=%s --port=3306  -uroot -pjupiter instagram" % HOST
 pipeData = Popen(command,shell=True,stdout=PIPE, stderr=PIPE,stdin=PIPE)
 
 

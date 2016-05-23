@@ -44,30 +44,30 @@ Els codis de recurs i severitat els decideix lliurement l'aplicació, però se s
 
 | codi  | descripció                         |  
 |----|:-------------------------------------------:|  
-| 0  | Mensajes del kernel                         | 
-| 1  | Mensajes del nivel de usuario               |  
+| 0  | Missatge del kernel                         | 
+| 1  | Missatge del nivel del usuari               |  
 | 2  | Sistema de correo                           |  
-| 3  | Demonios de sistema                         |  
-| 4  | Seguridad/Autorización                      |  
-| 5  | Mensajes generados internamente por syslogd |  
-| 6  | Subsistema de impresión                     |  
-| 7  | Subsistema de noticias sobre la red         |  
+| 3  | Dimonis del sistema                         |  
+| 4  | Seguritat/Autorització                      |  
+| 5  | Missatge generats internament pel syslogd   |  
+| 6  | Subsistema de impresió                      |  
+| 7  | Subsistema de notícias sobre la xarxa       |  
 | 8  | Subsistema UUCP                             |  
-| 9  | Demonio de reloj                            |  
-| 10 | Seguridad/Autorización                      |  
-| 11 | Demonio de FTP                              |  
+| 9  | Dimoni del rellotje                         |  
+| 10 | Seguritat/Autorització                      |  
+| 11 | Dimoni de FTP                               |  
 | 12 | Subsistema de NTP                           |  
-| 13 | Inspección del registro                     |  
-| 14 | Alerta sobre el registro                    |  
-| 15 | Demonio de reloj                            |  
-| 16 | Uso local 0                                 |  
-| 17 | Uso local 1                                 |  
-| 18 | Uso local 2                                 |  
-| 19 | Uso local 3                                 |  
-| 20 | Uso local 4                                 |  
-| 21 | Uso local 5                                 |  
-| 22 | Uso local 6                                 |  
-| 23 | Uso local 7                                 |  
+| 13 | Inspecció del registre                      |  
+| 14 | Alerta sobre el registre                    |  
+| 15 | Dimonio del rellotje                        |  
+| 16 | Ús local 0                                  |  
+| 17 | Ús local 1                                  |  
+| 18 | Ús local 2                                  |  
+| 19 | Ús local 3                                  |  
+| 20 | Ús local 4                                  |  
+| 21 | Ús local 5                                  |  
+| 22 | Ús local 6                                  |  
+| 23 | Ús local 7                                  |  
 
 *Codis de severitat* 
 
@@ -297,7 +297,7 @@ Executar el script [mysql_logGen.py](https://github.com/iamsunil/generate_logs/b
 		./mysql_logGenerator.py   
 
 ***`Nota`***  
-	El host on executeu aquest script ha de tenir el MySQL server instal·lat. 
+El host on executeu aquest script ha de tenir el MySQL server instal·lat. A més a més, dins d'aquest script heu de cambiar el valor de la variable `HOST`.  El valor ha de ser el `ip` del host que tingui el container.
 ##### Pas 7  
 Verificar si el journald del sistema està rebent els logs del container.  
 

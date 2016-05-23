@@ -1,7 +1,8 @@
 # Docker container amb Mysql Server instal·lat  
 Per generar logs massivament utilitzarem un container de docker amb **Mysql Server** i un script de python. El script simplement es connectarà al Mysql Server del container i farà queries que generaran logs. A continuació, us explicaré detalladament tots els passos a fer.  
 
-Per entendre millor el funcionament de script, la generació de logs i el fitxer de log llegiu aquesta [documentció](https://github.com/iamsunil/generate_logs/blob/master/metode3/docker_mysql/README.md).  
+Per entendre millor la creació del container, la generació de logs, el fitxer de log 
+i les configuracions del Mysql Server llegiu aquesta [documentació](https://github.com/iamsunil/generate_logs/blob/master/metode3/docker_mysql/README.md). 
 
 ## Instruccions 
 Abans de començar amb els següents passos, cloneu aquest [repositori](https://github.com/iamsunil/generate_logs.git). Si ja heu fet prèviament no cal.  
@@ -69,7 +70,8 @@ Executar el script [mysql_logGenerator.py](https://github.com/iamsunil/generate_
 		./mysql_logGenerator.py   
 
 ***`Nota`***  
-	El host on voleu executar aquest script ha de tenir el MySQL server instal·lat. 
+El host on executeu aquest script ha de tenir el MySQL server instal·lat. A més a més, dins d'aquest script heu de 
+cambiar el valor de la variable `HOST`.  El valor ha de ser el `ip` del host que tingui el container.
 	
 ### Pas 7  
 Verificar si el journald del sistema està rebent els logs del container.  
