@@ -16,7 +16,7 @@ Per realitzar aquesta tasca utilitzaré les següents eines:
 * Un equip amb GNU Linux (fedora 20)
 * Docker 
 * MySQL Server
-* Python  
+* Python
 * Bash 
 
 ## Objectiu del Projecte

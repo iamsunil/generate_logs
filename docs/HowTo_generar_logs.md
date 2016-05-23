@@ -15,7 +15,7 @@ Per realitzar aquesta tasca utilitzaré les següents eines:
 * Un equip amb GNU Linux (fedora 20)
 * Docker 
 * MySQL Server
-* Python  
+* Python
 * Bash 
 
 
@@ -32,7 +32,7 @@ i també ofereixen Stunnel perquè les dades viatgin xifrats mitjançant **SSL/T
 La estructura dels missatges generat pel syslog estén compost per tres parts.  
 
 * Prioritat
-* Capçalera  
+* Capçalera
 * Text  
 
 **Prioritat**  
@@ -144,7 +144,7 @@ Per generar els logs diversos massivament utilitzaré els següents mètodes:
 * Un equip amb GNU Linux (fedora 20)
 * Docker 
 * MySQL Server
-* Python  
+* Python
 * Bash 
 
 ### Preparació del entorn de treball 
@@ -297,7 +297,9 @@ Executar el script [mysql_logGen.py](https://github.com/iamsunil/generate_logs/b
 		./mysql_logGenerator.py   
 
 ***`Nota`***  
-El host on executeu aquest script ha de tenir el MySQL server instal·lat. A més a més, dins d'aquest script heu de cambiar el valor de la variable `HOST`.  El valor ha de ser el `ip` del host que tingui el container.
+El host on executeu aquest script ha de tenir el MySQL server instal·lat. A més a més, dins
+d'aquest script heu de cambiar el valor de la variable `HOST`.  El valor ha de ser el `ip` del host que tingui el container.  
+
 ##### Pas 7  
 Verificar si el journald del sistema està rebent els logs del container.  
 
