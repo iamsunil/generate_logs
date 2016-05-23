@@ -3,7 +3,7 @@ Aquest mètode consisteix en generar logs massivament apartir d'un script de bas
 
 ## Instruccions  
 ### Pas 1  
-Descarregueu el script [logGenerator.sh](logGenerator.sh).  
+Descarregueu el script [logGenerator.sh](https://github.com/iamsunil/generate_logs/blob/master/metode1/logGenerator.sh).  
 
 ### Pas 2 
 Executar el script.  

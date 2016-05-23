@@ -1,8 +1,5 @@
 # Mysql Dockerfile 
-
-
 ## Descripció dels fitxers 
-
 ### [Dockerfile](Dockerfile) 
 *Built on : Docker version 1.8.3 Run on: Docker version 1.8.3 Tested on : Docker version 1.8.3*
 
@@ -41,5 +38,5 @@ Aquest és el fitxer de configuració del Mysql Server. He afegit una sèrie de 
 
 Amb aquesta configuració, tots els logs que generi el meu script s'aniran a parar al fitxer indicat al paràmetre `general_log_file`.
 
-###  mysqlGeneral.log
+###  [mysqlGeneral.log](https://github.com/iamsunil/generate_logs/blob/master/metode3/docker_mysql/mysqlGeneral.log)
 És un fitxer per afegir al `/var/log/` del container. El MySQL Server utilitzarà a aquest per escriure els logs.
