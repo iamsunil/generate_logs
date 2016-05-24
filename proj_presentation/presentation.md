@@ -37,8 +37,9 @@ en els seus projectes.
 
 ![](dock_explain.png)
 
------------
+------------------ 
 
+## Passos a fer
 - Engegar en container amb aquest [script](../metode3/docker_mysql/start_cont.sh)
 - MySQL Server escriurà els logs generat per aquest [script](../metode3/mysql_logGenerator.py) al  `/var/log/mysqlGeneral.log`.  
 - filtrar els logs amb `journalctl` en el sistema.  
