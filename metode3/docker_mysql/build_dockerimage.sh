@@ -2,7 +2,7 @@
 # Autor: Sunil Shrestha 
 # Curs: ASIX 
 # Centre: Escola Del Treball
-# Descripció:  Un script de bash que crea un imatge a partir de dockerfile.
+# Descripció:  start a container and execute a command on it 
 
 
 

@@ -47,12 +47,13 @@ body {
   letter-spacing: normal;
   text-shadow: none;
   word-wrap: break-word; 
-  font-variant: small-caps; }
+  }
 .reveal h1 {
-  font-size: 1.9em; }
+  font-size: 1.9em; 
+  font-variant: small-caps; }
 
 .reveal h2 {
-  font-size: 1.6em; }
+  font-size: 1.3em; }
 
 .reveal h3 {
   font-size: 1.3em; }

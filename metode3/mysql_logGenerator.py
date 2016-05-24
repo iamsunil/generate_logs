@@ -1,13 +1,10 @@
 #!/usr/bin/python
 #-*- coding: utf-8-*-
-'''
+# Sunil Shrestha 
+# ASIX
+# Projecte 2016
 # consulta sql
-# -----------------------------------------------------------------
-# Escola del treball de Barcelona
-# ASIX Hisi2 M06-ASO UF2NF1-Scripts
-# @edt Curs 2015-2015  Gener 2015
-# -----------------------------------------------------------------
-'''
+
 import sys,time 
 from subprocess import Popen,  PIPE
 
